@@ -55,6 +55,18 @@ public class List<T> {
         return current.getInfo();
     }
 
+    //Retornar la posicion del elemento pasado por parámetro
+    public int indexOf(T info){
+        Node<T> current = first;
+        for(int i=0; i<this.size; i++){
+            if(current.getInfo().equals(info)){
+                return i;
+            }
+            current = current.getNext();
+        }
+        return -1;
+    }
+
     //String
     // Devuelve una representación String de la lista
     @Override

@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         //Lista:
+        System.out.println("---------------------Lista--------------------- \b");
         List<String> list = new List<>();
         list.insertFront("Feli");
         list.insertFront("Seba");
@@ -15,6 +16,7 @@ public class Main {
         System.out.println("La lista queda: "+list);
 
         //Pila
+        System.out.println("---------------------Pila--------------------- \b");
         Pila<String> pila = new Pila<>();
         pila.push("Primer elemento");
         pila.push("Segundo elemento");
@@ -27,5 +29,9 @@ public class Main {
         System.out.println("La pila queda: "+pila);
         pila.reverse();
         System.out.println("La pila revertida: \b"+pila);
+
+        System.out.println("---------------------Lista IndexOf--------------------- \b");
+        //IndexOf Lista
+        System.out.println(list.indexOf("Feli"));
     }
 }
