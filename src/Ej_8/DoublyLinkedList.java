@@ -1,22 +1,32 @@
-package Ej_7;
+package Ej_8;
 
-import Ej_1.Node;
+public class DoublyLinkedList<T> {
 
-public class List<T> {
     //Atributos
     private Node<T> first;
+    private Node<T> last;
     private int size;
 
-    //Constructor
-    public List() {
+    //Constructores
+    public DoublyLinkedList() {
         this.first = null;
+        this.last = null;
         this.size = 0;
     }
 
-    //Metodos
+    public DoublyLinkedList(Node<T> first, Node<T> last, int size) { //Preguntar si esta bien dejarlo
+        this.first = first;
+        this.last = last;
+        this.size = size;
+    }
+
+    //!!!! No devolver informacion, no debo devolver nodos con informacion
+    // Por eso elimine los set y get de setLast
+
+    //Metodos desde el inicio:
     //Insertar un elemento al frente de la lista
     public void insertFront(T info) {
-        Node<T> newNodo = new Node<T>(info, null); //Creo un nodo
+        Node<T> newNodo = new Node<T>(info, null, null); //Creo un nodo
         newNodo.setNext(this.first); //Busco el siguiente del primer nodo
         this.first = newNodo; //el primero se vuelve el nuevo nodo
         size++;
@@ -68,31 +78,16 @@ public class List<T> {
         return -1;
     }
 
-    //Metodo diferencia
-    public List<T> subtraction(List<T> l1, List<T> l2) {
-        // Creamos una nueva lista para la diferencia
-        List<T> subtractionList = new List<>();
+    //Metodos desde el fin
+    public void insertLast(T info){
+        Node<T> newNodo = new Node<>(info, null, null); //Creo un nuevo nodo
+        newNodo.setPrevious(this.last); //Busco el anterior del ultimo nodo
+        this.last = newNodo; //el ultimo se vuelve el nuevo nodo
+        size++;
 
-        // Iteramos a través de l1
-        for (int i = 0; i < l1.getSize(); i++) {
-            boolean found = false;
-
-            // Iteramos a través de l2
-            for (int j = 0; j < l2.getSize(); j++) {
-                if (l1.get(i).equals(l2.get(j))) { // Comparamos elementos de l1 y l2
-                    found = true;
-                    break; // Elemento encontrado en l2, salimos del bucle interno
-                }
-            }
-
-            // Si el elemento no se encontró en l2, lo agregamos
-            if (!found) {
-                subtractionList.insertFront(l1.get(i)); // Añadimos
-            }
-        }
-
-        return subtractionList;
     }
+
+
     //String
     // Devuelve una representación String de la lista
     @Override

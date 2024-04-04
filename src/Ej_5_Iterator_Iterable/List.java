@@ -1,8 +1,9 @@
-package Ej_7;
+package Ej_5_Iterator_Iterable;
 
-import Ej_1.Node;
+import java.util.Iterator;
 
-public class List<T> {
+public class List<T> implements Iterable<T>{
+
     //Atributos
     private Node<T> first;
     private int size;
@@ -28,7 +29,7 @@ public class List<T> {
             return null;
         }
         T dato = first.getInfo();
-        first = first.getNext();
+            first = first.getNext();
         size--;
         return dato;
     }
@@ -39,7 +40,7 @@ public class List<T> {
         return size;
     }
 
-    //Empty
+    //Size
     public boolean isEmpty() {
         return size == 0;
     }
@@ -57,10 +58,10 @@ public class List<T> {
     }
 
     //Retornar la posicion del elemento pasado por parámetro
-    public int indexOf(T info) {
+    public int indexOf(T info){
         Node<T> current = first;
-        for (int i = 0; i < this.size; i++) {
-            if (current.getInfo().equals(info)) {
+        for(int i=0; i<this.size; i++){
+            if(current.getInfo().equals(info)){
                 return i;
             }
             current = current.getNext();
@@ -68,45 +69,15 @@ public class List<T> {
         return -1;
     }
 
-    //Metodo diferencia
-    public List<T> subtraction(List<T> l1, List<T> l2) {
-        // Creamos una nueva lista para la diferencia
-        List<T> subtractionList = new List<>();
-
-        // Iteramos a través de l1
-        for (int i = 0; i < l1.getSize(); i++) {
-            boolean found = false;
-
-            // Iteramos a través de l2
-            for (int j = 0; j < l2.getSize(); j++) {
-                if (l1.get(i).equals(l2.get(j))) { // Comparamos elementos de l1 y l2
-                    found = true;
-                    break; // Elemento encontrado en l2, salimos del bucle interno
-                }
-            }
-
-            // Si el elemento no se encontró en l2, lo agregamos
-            if (!found) {
-                subtractionList.insertFront(l1.get(i)); // Añadimos
-            }
-        }
-
-        return subtractionList;
-    }
     //String
     // Devuelve una representación String de la lista
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        Node<T> current = first;
-        while (current != null) {
-            sb.append(current.getInfo()).append(", ");
-            current = current.getNext();
-        }
-        if (size > 0) {
-            sb.setLength(sb.length() - 2);
-        }
-        sb.append("]");
-        return sb.toString();
+        return "["+this.first.toString()+"]"; //Ver si funciona asi
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new MyIterator<>(this.first); //Creo un iterador y le paso el primer elemento
     }
 }
