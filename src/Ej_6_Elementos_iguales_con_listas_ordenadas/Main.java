@@ -1,4 +1,4 @@
-package Ej_7_Elementos_distintos;
+package Ej_6_Elementos_iguales_con_listas_ordenadas;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,12 +33,13 @@ public class Main {
             //Itero siempre con el menor
             if(val1<val2){
                 it1.next();
-                salida.insertFront(val1);
             }
             //Si son iguales avanzo con ambos
             else if(val1==val2){
+                salida.insertFront(val2);
                 it1.next();
                 it2.next();
+
             }
             else{
                 it2.next();
@@ -52,7 +53,7 @@ public class Main {
         }
 
 
-        System.out.println("La lista con elemntos distintos es: "+salida);
+        System.out.println("La lista con elementos iguales es: "+salida);
 
     }
 

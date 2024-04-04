@@ -1,9 +1,10 @@
-package Ej_7;
+package Ej_6_Elementos_iguales_con_listas_ordenadas;
 
-public class Node<T> {
+public class Node <T>{
+
     //Atributos
     private T info;
-    private Ej_1_Lista_vinculable_y_pila.Node<T> next;
+    private Node<T> next;
 
     //Constructor
     public Node(){
@@ -12,7 +13,7 @@ public class Node<T> {
     }
 
     //Constructor con parametros
-    public Node(T info, Ej_1_Lista_vinculable_y_pila.Node<T> next){
+    public Node(T info, Node<T> next){
         this.setInfo(info); //Incializamos nulo
         this.setNext(next);
     }
@@ -23,7 +24,7 @@ public class Node<T> {
         this.info = info;
     }
 
-    public void setNext(Ej_1_Lista_vinculable_y_pila.Node<T> next){
+    public void setNext(Node<T> next){
         this.next = next;
     }
 
@@ -31,7 +32,7 @@ public class Node<T> {
         return this.info;
     }
 
-    public Ej_1_Lista_vinculable_y_pila.Node<T> getNext(){
+    public Node<T> getNext(){
         return this.next;
     }
 }
