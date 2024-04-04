@@ -1,6 +1,4 @@
-package Ej_6;
-
-import java.util.Collections;
+package Ej_1_Lista_vinculable_y_pila;
 
 public class List<T> {
 
@@ -67,20 +65,6 @@ public class List<T> {
             current = current.getNext();
         }
         return -1;
-    }
-
-    //Metodo elementos iguales
-    public List<T> isEqual(List<T> l1, List<T> l2) {
-        List<T> listEqual = new List<>();
-        for (int i = 0; i < l1.getSize(); i++) {
-            for (int j = 0; j < l2.getSize(); j++) {
-                if (l1.get(i)==l2.get(j)) { //Esta bien o va equals?
-                    listEqual.insertFront(l1.get(i));
-                    break;
-                }
-            }
-        }
-        return listEqual; //Preguntar como lo ordeno
     }
 
     //String

@@ -1,4 +1,4 @@
-package Ej_1;
+package Ej_7_Elementos_distintos;
 
 public class Node <T>{
 

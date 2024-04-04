@@ -1,6 +1,8 @@
-package Ej_1;
+package Ej_7_Elementos_distintos;
 
-public class List<T> {
+import java.util.Iterator;
+
+public class List<T> implements Iterable<T>{
 
     //Atributos
     private Node<T> first;
@@ -83,4 +85,11 @@ public class List<T> {
         sb.append("]");
         return sb.toString();
     }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new MyIterator<>(this.first); //Creo un iterador y le paso el primer elemento
+    }
+
+
 }

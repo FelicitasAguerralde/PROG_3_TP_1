@@ -1,6 +1,6 @@
 package Ej_7;
 
-import Ej_1.Node;
+import Ej_1_Lista_vinculable_y_pila.Node;
 
 public class List<T> {
     //Atributos

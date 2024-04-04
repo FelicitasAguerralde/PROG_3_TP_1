@@ -1,4 +1,4 @@
-package Ej_6;
+package Ej_1_Lista_vinculable_y_pila;
 
 public class Node <T>{
 

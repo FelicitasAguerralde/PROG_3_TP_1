@@ -1,4 +1,4 @@
-package Ej_1;
+package Ej_1_Lista_vinculable_y_pila;
 
 public class Main {
     public static void main(String[] args) {

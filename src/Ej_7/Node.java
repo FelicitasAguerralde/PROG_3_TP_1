@@ -3,7 +3,7 @@ package Ej_7;
 public class Node<T> {
     //Atributos
     private T info;
-    private Ej_1.Node<T> next;
+    private Ej_1_Lista_vinculable_y_pila.Node<T> next;
 
     //Constructor
     public Node(){
@@ -12,7 +12,7 @@ public class Node<T> {
     }
 
     //Constructor con parametros
-    public Node(T info, Ej_1.Node<T> next){
+    public Node(T info, Ej_1_Lista_vinculable_y_pila.Node<T> next){
         this.setInfo(info); //Incializamos nulo
         this.setNext(next);
     }
@@ -23,7 +23,7 @@ public class Node<T> {
         this.info = info;
     }
 
-    public void setNext(Ej_1.Node<T> next){
+    public void setNext(Ej_1_Lista_vinculable_y_pila.Node<T> next){
         this.next = next;
     }
 
@@ -31,7 +31,7 @@ public class Node<T> {
         return this.info;
     }
 
-    public Ej_1.Node<T> getNext(){
+    public Ej_1_Lista_vinculable_y_pila.Node<T> getNext(){
         return this.next;
     }
 }

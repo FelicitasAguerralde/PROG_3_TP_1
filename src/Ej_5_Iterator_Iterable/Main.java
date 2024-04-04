@@ -1,9 +1,5 @@
 package Ej_5_Iterator_Iterable;
 
-import Ej_1.Pila;
-
-import java.util.Iterator; //Importo la libreria
-
 public class Main {
     public static void main(String[] args) {
 
