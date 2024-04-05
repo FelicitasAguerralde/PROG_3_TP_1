@@ -1,6 +1,9 @@
 package Ej_8;
 
-public class DoublyLinkedList<T> {
+import javax.print.attribute.standard.NumberOfDocuments;
+import java.util.Iterator;
+
+public class DoublyLinkedList<T> implements Iterable<T>{
 
     //Atributos
     private Node<T> first;
@@ -79,12 +82,23 @@ public class DoublyLinkedList<T> {
     }
 
     //Metodos desde el fin
-    public void insertLast(T info){
-        Node<T> newNodo = new Node<>(info, null, null); //Creo un nuevo nodo
-        newNodo.setPrevious(this.last); //Busco el anterior del ultimo nodo
-        this.last = newNodo; //el ultimo se vuelve el nuevo nodo
-        size++;
+    public void insertBack(T dato) {
+        Node<T> nuevoNodo = new Node<>(dato, null,null);
 
+        // Encontrar el último nodo
+        Node<T> actual = first;
+        while (actual.getNext() != null) {
+            actual = actual.getNext();
+        }
+
+        // Enlazar el nuevo nodo
+        actual.setNext(nuevoNodo);
+        nuevoNodo.setPrevious(actual);
+
+        // Actualizar el puntero head si la lista está vacía
+        if (first == null) {
+            first = nuevoNodo;
+        }
     }
 
 
@@ -103,5 +117,10 @@ public class DoublyLinkedList<T> {
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new MyIterator<>(this.first); //Creo un iterador y le paso el primer elemento
     }
 }

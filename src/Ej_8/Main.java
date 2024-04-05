@@ -14,9 +14,9 @@ public class Main {
         list.insertFront(1);
 
         // Insertar elementos al final de la lista
-        list.insertLast(4);
-        list.insertLast(5);
-        list.insertLast(6);
+        list.insertBack(4);
+        list.insertBack(5);
+        list.insertBack(6);
 
         // Imprimir la lista
         System.out.println("Lista doblemente vinculada: " + list.toString());
