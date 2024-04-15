@@ -2,12 +2,12 @@ package Ej_10_Ordenado;
 
 public class Main {
 
-    int[] arreglo = {1, 2, 3, 4, 5};
-        if (estaOrdenado(arreglo, arreglo.length)) {
-        System.out.println("El arreglo está ordenado");
-    } else {
-        System.out.println("El arreglo no está ordenado");
-    }
-}
+    public static void main(String[] args) {
+        int[] arreglo = {1, 2, 3, 4, 5};
 
+        Ordenado_recursion ordenado = new Ordenado_recursion();
+
+        System.out.println(ordenado.estaOrdenado(arreglo, 0, arreglo.length - 1)); // Imprime true
+
+    }
 }
