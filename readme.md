@@ -3,6 +3,9 @@
 Implemente los métodos indicados del esqueleto de Lista desarrollado en Teoría (
 void insertFront(T), T extractFront(), boolean isEmpty(), int size(),
 String toString). Agregar también el método: T get(index).
+![linkedList](img/linkedList.png)
+![linkedList](img/insertion.png)
+![linkedList](img/delete.png)
 ## Ejercicio 2
 Considerando la implementación de la lista vinculada realizada en el ejercicio anterior, comparar la
 complejidad computacional contra un array en las siguientes operaciones:
@@ -10,6 +13,8 @@ complejidad computacional contra un array en las siguientes operaciones:
 2. Buscar un elemento en una posición.
 3. Determinar la cantidad de elementos.
 4. Borrar un elemento de una posición determinada.
+![Complexity](img/complexity.png)
+
 ## Ejercicio 3
    A la implementación de la clase Lista realizada en el ejercicio 1, agregue un método
    int indexOf(T), que reciba un elemento y retorne el índice donde está almacenado ese
