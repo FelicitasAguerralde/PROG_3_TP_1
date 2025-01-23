@@ -2,23 +2,20 @@ package Ej_1_Lista_vinculable_y_pila;
 
 public class Node <T>{
 
-    //Atributos
     private T info;
     private Node<T> next;
 
-    //Constructor
+    // Se inicializa nulo
     public Node(){
-        this.info = null; //Incializamos nulo
+        this.info = null;
         this.next = null;
     }
 
-    //Constructor con parametros
+    // Setea el valor del nodo y el siguiente
     public Node(T info, Node<T> next){
-        this.setInfo(info); //Incializamos nulo
+        this.setInfo(info);
         this.setNext(next);
     }
-
-    //Getter and Setters
 
     public void setInfo(T info){
         this.info = info;

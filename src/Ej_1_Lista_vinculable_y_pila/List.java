@@ -2,38 +2,42 @@ package Ej_1_Lista_vinculable_y_pila;
 
 public class List<T> {
 
-    //Atributos
     private Node<T> first;
     private int size;
 
-    //Constructor
+    // Se inicializan los atributos
     public List() {
         this.first = null;
         this.size = 0;
     }
 
-    //Metodos
-    //Insertar un elemento al frente de la lista
+    // Insertar un elemento al frente de la lista
     public void insertFront(T info) {
-        Node<T> newNodo = new Node<T>(info, null); //Creo un nodo
-        newNodo.setNext(this.first); //Busco el siguiente del primer nodo
-        this.first = newNodo; //el primero se vuelve el nuevo nodo
-        size++;
+        Node<T> newNodo = new Node<T>(info, null); // Se crea un nuevo nodo con el dato y sin siguiente
+        newNodo.setNext(this.first); // Se apunta al nuevo nodo al nodo que era el primero
+        this.first = newNodo; // El nuevo nodo se convierte en el primero de la lista
+        size++; // Se incrementa el tamaño de la lista
     }
 
-    //Extraer un elemento del frente de la lista
+    // Extraer un elemento del frente de la lista
     public T extractFront() {
         if (isEmpty()) {
             return null;
         }
+        // Se guarda la info a borrar para poder devolverla
         T dato = first.getInfo();
-            first = first.getNext();
+
+        // El primero apunta al siguiente
+        first = first.getNext();
+
+        // Se actualiza el tamaño de la lista
         size--;
+
         return dato;
     }
 
 
-    //Get size
+    // Obtener tamaño de la lista
     public int getSize() {
         return size;
     }
